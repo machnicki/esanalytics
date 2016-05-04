@@ -29,5 +29,12 @@ export default {
         include: PATHS.app,
       },
     ],
+    preLoaders: [
+      {
+        test: /\.(js|jsx)$/,
+        loaders: ['eslint', 'jscs'],
+        include: PATHS.app,
+      },
+    ],
   },
 }
