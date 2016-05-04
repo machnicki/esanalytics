@@ -21,7 +21,8 @@ module.exports = function(config) {
         root: path.resolve(__dirname, './src'),
         extensions: ['', '.js'],
         alias: {
-          'sinon': 'sinon/pkg/sinon'
+          'sinon': 'sinon/pkg/sinon',
+          'components': path.resolve(__dirname, './src/components'),
         }
       },
       module: {

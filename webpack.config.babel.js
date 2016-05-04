@@ -37,4 +37,9 @@ export default {
       },
     ],
   },
+  resolve: {
+    alias: {
+      components: path.resolve(PATHS.app, 'components'),
+    },
+  },
 }
