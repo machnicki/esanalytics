@@ -1,3 +1,5 @@
+[![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)](http://esanalytics.herokuapp.com)
+
 #Feature: Display correct component implementation
 Appropriate React component should be displayed based on the contents of the JSON response
 No component should be displayed if the response indicates so
