@@ -6,8 +6,6 @@ import FeatureA from 'components/feature-a'
 import FeatureB from 'components/feature-b'
 import Toggler from 'components/toggler'
 
-import styles from './app.css'
-
 import { getData, setFeature } from 'reduxModules/feature/feature.actions'
 
 export class App extends Component {
@@ -25,7 +23,7 @@ export class App extends Component {
     const { feature } = this.props
 
     return (
-      <div styleName="app">
+      <div>
         {
           (feature.activeFeatureNo === 1 && <FeatureA />)
           || (feature.activeFeatureNo === 2 && <FeatureB />)
@@ -53,4 +51,4 @@ App.defaultProps = {
 
 export default connect((state) => ({
   feature: state.feature.toJS(),
-}))(CSSModules(App, styles))
+}))(App)
