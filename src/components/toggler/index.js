@@ -1,8 +1,10 @@
 import React, { PropTypes } from 'react'
+import CSSModules from 'react-css-modules'
+import styles from './style.css'
 
 export function Toggler(props) {
   return (
-    <div>
+    <div styleName="toggler">
      <h2>Choose feature</h2>
      <ul>
       { _renderItems(props) }
@@ -32,4 +34,4 @@ Toggler.defaultProps = {
   onChange: () => null,
 }
 
-export default Toggler
+export default CSSModules(Toggler, styles)

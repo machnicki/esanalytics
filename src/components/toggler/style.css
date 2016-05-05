@@ -1,0 +1,8 @@
+.toggler :global ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.toggler :global .selected {
+  font-weight: bold;
+}

@@ -21,5 +21,5 @@
 | setFeature | change current component - attr: `{ feature: number }`|
 
 #TODO
-* Styling - use CSS Modules to style elements
+* Styling - use CSS Modules to style elements + PostCSS with nested
 * Tests - write tests for redux, container and toggle component
