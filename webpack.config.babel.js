@@ -41,6 +41,7 @@ export default {
     alias: {
       components: path.resolve(PATHS.app, 'components'),
       containers: path.resolve(PATHS.app, 'containers'),
+      reduxModules: path.resolve(PATHS.app, 'redux/modules'),
     },
   },
 }
