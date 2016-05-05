@@ -1,42 +1,25 @@
 [![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)](http://esanalytics.herokuapp.com)
 
-#Feature: Display correct component implementation
-Appropriate React component should be displayed based on the contents of the JSON response
-No component should be displayed if the response indicates so
+#Stack
+* React with Redux (+ thunk middleware), and Immutable.js
+* Webpack2 with native modules
+* Karma with Mocha for tests
+* Heroku deployable (http://esanalytics.herokuapp.com)
 
-##Scenario: FeatureA rendering
-Given JSON response is received
-When It indicates FeatureA
-Then FeatureA component should be rendered
+#Scenarios
+* On the beginning app gets random JSON from features and display correct component
+* Module `Toggle` dispatch `setFeature` action, which change current component
 
-##Scenario: FeatureB rendering
-Given JSON response is received
-When It indicates FeatureB
-Then FeatureB component should be rendered
+##How to run
+* Go to http://esanalytics.herokuapp.com and use `Redux DevTools` for Chrome to test Redux
+* Download repo -> `npm install` -> `npm start`
 
-##Scenario: No feature
-Given JSON response is received
-When It indicates no feature
-Then No feature component should be rendered
+## Actions
+| Name  | Description |
+| ------------- | ------------- |
+| getData | uses native fetch() to get random JSON |
+| setFeature | change current component - attr: `{ feature: number }`|
 
-#Feature: Toggle component implementation
-There should be UI to allow for selecting feature component implementation (or no implementation)
-
-##Scenario: Display currently selected implementation
-Given JSON response is received
-Then Current implementation should be flagged as active in the implementation selector
-
-##Scenario: FeatureA selection
-When FeatureA is selected
-Then Make sure the correct JSON response is returned
-And FeatureA is rendered
-
-##Scenario: FeatureB selection
-When FeatureB is selected
-Then Make sure the correct JSON response is returned
-And FeatureB is rendered
-
-##Scenario: no feature selection
-When no feature is selected
-Then Make sure the correct JSON response is returned
-And No feature is rendered
+#TODO
+* Styling - use CSS Modules to style elements
+* Tests - write tests for redux, container and toggle component
