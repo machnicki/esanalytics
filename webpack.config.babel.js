@@ -24,6 +24,7 @@ export default {
             'es2015-native-modules',
             'react',
             'react-optimize',
+            'stage-1',
           ],
         },
         include: PATHS.app,

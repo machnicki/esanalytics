@@ -3,13 +3,19 @@ import { connect } from 'react-redux'
 
 import FeatureA from 'components/feature-a'
 import FeatureB from 'components/feature-b'
+import Toggler from 'components/toggler'
 
-import { getData } from 'reduxModules/feature/feature.actions'
+import { getData, setFeature } from 'reduxModules/feature/feature.actions'
 
 export class App extends Component {
   componentWillMount() {
     const { dispatch } = this.props
     dispatch(getData())
+  }
+
+  handleTogglerChange(feature) {
+    const { dispatch } = this.props
+    dispatch(setFeature({ feature }))
   }
 
   render() {
@@ -24,6 +30,7 @@ export class App extends Component {
         }
         { feature.isFetching && <div>loading...</div> }
         { feature.error && <div>Error: { feature.error }</div> }
+        <Toggler onChange={ featureNo => this.handleTogglerChange(featureNo) } />
       </div>
     )
   }
