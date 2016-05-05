@@ -23,6 +23,7 @@ module.exports = function(config) {
         alias: {
           'sinon': 'sinon/pkg/sinon',
           'components': path.resolve(__dirname, './src/components'),
+          'containers': path.resolve(__dirname, './src/containers'),
         }
       },
       module: {

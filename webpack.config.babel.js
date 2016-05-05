@@ -40,6 +40,7 @@ export default {
   resolve: {
     alias: {
       components: path.resolve(PATHS.app, 'components'),
+      containers: path.resolve(PATHS.app, 'containers'),
     },
   },
 }
