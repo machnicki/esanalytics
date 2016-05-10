@@ -10,6 +10,7 @@ module.exports = function(config) {
     files: [
       'node_modules/babel-polyfill/dist/polyfill.js',
       './node_modules/phantomjs-polyfill/bind-polyfill.js',
+      './node_modules/whatwg-fetch/fetch.js',
       './test/**/*.js'
     ],
     preprocessors: {
@@ -24,6 +25,7 @@ module.exports = function(config) {
           'sinon': 'sinon/pkg/sinon',
           'components': path.resolve(__dirname, './src/components'),
           'containers': path.resolve(__dirname, './src/containers'),
+          'reduxModules': path.resolve(__dirname, './src/redux/modules'),
         }
       },
       module: {
@@ -32,6 +34,13 @@ module.exports = function(config) {
         ],
         loaders: [
           { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
+          {
+            test: /\.css$/,
+            loaders: [
+              'style',
+              'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+            ],
+          },
         ],
       },
       externals: {

@@ -1,18 +1,31 @@
 {
-  "extends": "airbnb",
-  "rules": {
-    "arrow-body-style": 0,
-    "semi": 0,
-    "func-names": 0,
-    "react/jsx-quotes": 0,
-    "jsx-quotes": [2, "prefer-double"],
-    "no-use-before-define": [2, "nofunc"],
-    "new-cap": 0,
-    "no-param-reassign": 0,
-    "no-unused-vars": 1,
-    "indent": [2, 2, {"SwitchCase": 1}],
-    "react/jsx-boolean-value": 0,
-    "id-length": [2, {"exceptions": ["x", "y", "Q", "e"]}],
-    "max-len": [2, 100, 2, {"ignoreUrls": true}],
+  parser: babel-eslint,
+  env: {
+    es6: true,
+    browser: true
+  },
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: module,
+    ecmaFeatures: {
+      jsx: true,
+      experimentalObjectRestSpread: true
+    }
+  },
+  extends: airbnb,
+  rules: {
+    arrow-body-style: 0,
+    semi: 0,
+    func-names: 0,
+    react/jsx-quotes: 0,
+    jsx-quotes: [2, prefer-double],
+    no-use-before-define: [2, nofunc],
+    new-cap: 0,
+    no-param-reassign: 0,
+    no-unused-vars: 1,
+    indent: [2, 2, {SwitchCase: 1}],
+    react/jsx-boolean-value: 0,
+    id-length: [2, {exceptions: [x, y, Q, e]}],
+    max-len: [2, 100, 2, {ignoreUrls: true}],
   },
 }
